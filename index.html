@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)file:///C:/Users/cdieg/Downloads/index%20(1).html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sample HTML document with a table and lists.">
     <meta name="keywords" content="HTML, table, lists, programming languages">
@@ -10,11 +10,19 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #add8e6; /* Light blue background */
+            background: linear-gradient(270deg, #add8e6, #ff7f50, #98fb98, #ffb6c1);
+            background-size: 800% 800%;
             margin: 0;
             padding: 20px;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .container {
+            display: none; /* Hide main content initially */
             max-width: 800px;
             margin: auto;
             background: rgba(255, 255, 255, 0.9);
@@ -63,9 +71,63 @@
             max-width: 50%;
             height: auto;
         }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
-    </head>
+    <script>
+        function createAccount(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            
+            // Perform basic validation (for demonstration purposes only)
+            if (username && email && password) {
+                alert("Account created successfully!");
+                document.querySelector('.form-container').style.display = 'none'; // Hide the form
+                document.querySelector('.container').style.display = 'block'; // Show the main content
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</head>
 <body>
+    <div class="form-container">
+        <h2>Create Account</h2>
+        <form onsubmit="createAccount(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+    
     <div class="container">
         <h1>Programming Languages</h1>
         <div class="random-image">
@@ -73,7 +135,7 @@
         </div>
         <h2>Table</h2>
         <table>
-            <tbody><tr>
+            <tr>
                 <th>Language</th>
                 <th>Creator</th>
                 <th>Year</th>
@@ -98,7 +160,7 @@
                 <td>Bjarne Stroustrup</td>
                 <td>1985</td>
             </tr>
-        </tbody></table>
+        </table>
         <h2>Ordered List</h2>
         <ol>
             <li>Java</li>
@@ -114,6 +176,5 @@
             <li>C++</li>
         </ul>
     </div>
-
-
-</body></html>
+</body>
+</html>
