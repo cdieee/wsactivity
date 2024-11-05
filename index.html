@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,11 @@
       margin: 0;
       padding: 20px;
       animation: gradientAnimation 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
     }
 
     @keyframes gradientAnimation {
@@ -40,6 +46,7 @@
       background: linear-gradient(to right, #ff00ff, #ff9900, #00ccff, #00ff00);
       -webkit-background-clip: text;
       animation: moveText 10s linear infinite;
+      margin-bottom: 30px;
     }
 
     @keyframes moveText {
@@ -52,10 +59,43 @@
       }
     }
 
+    .form-container {
+      max-width: 400px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
     .container {
       display: none;
-      /* Hide main content initially */
-      max-width: 800px;
+      max-width: 100%;
       margin: auto;
       background: rgba(255, 255, 255, 0.9);
       padding: 20px;
@@ -117,43 +157,11 @@
       height: auto;
     }
 
-    .form-container {
-      max-width: 400px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-top: 20px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
     .selection-buttons {
       margin: 20px 0;
       display: flex;
       justify-content: space-around;
+      flex-wrap: wrap;
     }
 
     .selection-buttons button {
@@ -161,29 +169,26 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin: 5px;
     }
 
     .selection-buttons .java {
       background-color: #f44336;
-      /* Red */
       color: white;
     }
 
     .selection-buttons .html {
       background-color: #ff5722;
-      /* Deep orange */
       color: white;
     }
 
     .selection-buttons .python {
       background-color: #4CAF50;
-      /* Green */
       color: white;
     }
 
     .selection-buttons .cpp {
       background-color: #2196F3;
-      /* Blue */
       color: white;
     }
 
@@ -193,12 +198,89 @@
       border-radius: 10px;
       margin-top: 20px;
     }
+
+    /* Indication Text Style */
+    .indication-text {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media screen and (max-width: 768px) {
+      .moving-text {
+        font-size: 30px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      table,
+      th,
+      td {
+        font-size: 14px;
+      }
+
+      .random-image img {
+        max-width: 80%;
+      }
+
+      .selection-buttons button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .form-container,
+      .container {
+        padding: 15px;
+      }
+
+      video {
+        max-width: 90%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .moving-text {
+        font-size: 24px;
+      }
+
+      .form-container {
+        padding: 10px;
+      }
+
+      button {
+        padding: 8px 16px;
+      }
+
+      table,
+      th,
+      td {
+        font-size: 12px;
+      }
+
+      .random-image img {
+        max-width: 100%;
+      }
+
+      .selection-buttons button {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="moving-text">
-    CHAL DIA A GONZALEZ, FROM OLCA211A019, FINAL OUTPUT OF WS1
+    CHAL DIA A GONZALEZ, FROM OLCA211A019, FINAL OUTPUT OF WS1 ACTIVITIES.
   </div>
 
   <div class="form-container">
@@ -219,8 +301,8 @@
     
     <!-- Video Section -->
     <div id="video-container">
-  <!-- This container will be dynamically populated with an iframe using the selectVideo function -->
-</div>
+      <!-- This container will be dynamically populated with an iframe using the selectVideo function -->
+    </div>
 
     <h2>Table</h2>
     <table>
@@ -266,6 +348,11 @@
       <li>Python</li>
       <li>C++</li>
     </ul>
+
+    <!-- Indication Text -->
+    <div class="indication-text">
+      Here's a short introduction to the software we can use to make fully functional programs. Select from the buttons below:
+    </div>
 
     <div class="selection-buttons">
       <button class="java" onclick="selectVideo('java')">Java Video</button>
@@ -319,4 +406,5 @@
     }
   </script>
 </body>
+
 </html>
