@@ -8,7 +8,6 @@
   <meta name="author" content="Your Name">
   <title>Programming Languages</title>
   <style>
-    /* Your previous CSS goes here */
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(270deg, #add8e6, #ff7f50, #98fb98, #ffb6c1);
@@ -19,13 +18,43 @@
     }
 
     @keyframes gradientAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .moving-text {
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+      background: linear-gradient(to right, #ff00ff, #ff9900, #00ccff, #00ff00);
+      -webkit-background-clip: text;
+      animation: moveText 10s linear infinite;
+    }
+
+    @keyframes moveText {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
     }
 
     .container {
       display: none;
+      /* Hide main content initially */
       max-width: 800px;
       margin: auto;
       background: rgba(255, 255, 255, 0.9);
@@ -42,6 +71,85 @@
       border-radius: 5px;
     }
 
+    h2 {
+      color: #2e8b57;
+      background-color: #e0ffff;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 100%;
+      margin: 20px 0;
+      border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    ul,
+    ol {
+      margin: 20px 0;
+      padding: 0;
+      list-style-position: inside;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .random-image {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .random-image img {
+      max-width: 50%;
+      height: auto;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
     .selection-buttons {
       margin: 20px 0;
       display: flex;
@@ -55,7 +163,30 @@
       cursor: pointer;
     }
 
-    /* Styles for the video player */
+    .selection-buttons .java {
+      background-color: #f44336;
+      /* Red */
+      color: white;
+    }
+
+    .selection-buttons .html {
+      background-color: #ff5722;
+      /* Deep orange */
+      color: white;
+    }
+
+    .selection-buttons .python {
+      background-color: #4CAF50;
+      /* Green */
+      color: white;
+    }
+
+    .selection-buttons .cpp {
+      background-color: #2196F3;
+      /* Blue */
+      color: white;
+    }
+
     video {
       width: 100%;
       height: auto;
@@ -66,6 +197,9 @@
 </head>
 
 <body>
+  <div class="moving-text">
+    CHAL DIA A GONZALEZ, FROM OLCA211A019, FINAL OUTPUT OF WS1
+  </div>
 
   <div class="form-container">
     <h2>Create Account</h2>
@@ -79,14 +213,62 @@
 
   <div class="container">
     <h1>Programming Languages</h1>
-
+    <div class="random-image">
+      <img src="languages.png" alt="Random Image">
+    </div>
+    
     <!-- Video Section -->
     <div id="video-container">
       <video id="video-player" controls>
-        <source id="video-source" src="" type="video/mp4">
+        <source id="video-source" src="your-video-file.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
+
+    <h2>Table</h2>
+    <table>
+      <tr>
+        <th>Language</th>
+        <th>Creator</th>
+        <th>Year</th>
+      </tr>
+      <tr>
+        <td>Java</td>
+        <td>James Gosling</td>
+        <td>1995</td>
+      </tr>
+      <tr>
+        <td>HTML</td>
+        <td>Tim Berners-Lee</td>
+        <td>1993</td>
+      </tr>
+      <tr>
+        <td>Python</td>
+        <td>Guido van Rossum</td>
+        <td>1991</td>
+      </tr>
+      <tr>
+        <td>C++</td>
+        <td>Bjarne Stroustrup</td>
+        <td>1985</td>
+      </tr>
+    </table>
+
+    <h2>Ordered List</h2>
+    <ol>
+      <li>Java</li>
+      <li>HTML</li>
+      <li>Python</li>
+      <li>C++</li>
+    </ol>
+
+    <h2>Unordered List</h2>
+    <ul>
+      <li>Java</li>
+      <li>HTML</li>
+      <li>Python</li>
+      <li>C++</li>
+    </ul>
 
     <div class="selection-buttons">
       <button class="java" onclick="selectVideo('java')">Java Video</button>
@@ -113,32 +295,28 @@
 
     function selectVideo(language) {
       const videoSource = document.getElementById("video-source");
-      const videoPlayer = document.getElementById("video-player");
-
-      // Assign video sources based on selected language
       switch (language) {
-        case 'JAVA':
-          videoSource.src = "https://github.com/cdieee/wsactivity/blob/main/JAVA.mp4"; // Replace with your Java video file
+        case 'java':
+          videoSource.src = "https://github.com/cdieee/wsactivity/blob/main/JAVA.mp4"; // Replace with the actual Java video file path
           break;
-        case 'HTML':
-          videoSource.src = "https://github.com/cdieee/wsactivity/blob/main/HTML.mp4"; // Replace with your HTML video file
+        case 'html':
+          videoSource.src = "https://github.com/cdieee/wsactivity/blob/main/HTML.mp4"; // Replace with the actual HTML video file path
           break;
-        case 'PYTHON':
-          videoSource.src = "https://github.com/cdieee/wsactivity/blob/main/PYTHON.mp4"; // Replace with your Python video file
+        case 'python':
+          videoSource.src = "https://github.com/cdieee/wsactivity/blob/main/PYTHON.mp4"; // Replace with the actual Python video file path
           break;
-        case 'C++':
-          videoSource.src = "https://github.com/cdieee/wsactivity/blob/main/C%2B%2B.mp4"; // Replace with your C++ video file
+        case 'cpp':
+          videoSource.src = "https://github.com/cdieee/wsactivity/blob/main/C%2B%2B.mp4"; // Replace with the actual C++ video file path
           break;
         default:
           alert("Video not found.");
-          return;
       }
 
-      // Reload the video player with the new source
-      videoPlayer.load();
+      // Reload the video with new source
+      const videoPlayer = document.getElementById("video-player");
+      videoPlayer.load(); // This reloads the video player with the new source
       videoPlayer.play(); // Automatically play the video
     }
   </script>
-
 </body>
 </html>
