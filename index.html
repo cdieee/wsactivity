@@ -98,6 +98,33 @@
         button:hover {
             background-color: #45a049;
         }
+        .selection-buttons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        .selection-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .selection-buttons .java {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+        .selection-buttons .html {
+            background-color: #ff5722; /* Deep orange */
+            color: white;
+        }
+        .selection-buttons .python {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+        .selection-buttons .cpp {
+            background-color: #2196F3; /* Blue */
+            color: white;
+        }
     </style>
     <script>
         function createAccount(event) {
@@ -113,6 +140,13 @@
                 document.querySelector('.container').style.display = 'block'; // Show the main content
             } else {
                 alert("Please fill in all fields.");
+            }
+        }
+        
+        function selectSoftware(language) {
+            const software = prompt(`Which software do you prefer for coding in ${language}?`);
+            if (software) {
+                alert(`You prefer to use ${software} for coding in ${language}.`);
             }
         }
     </script>
@@ -175,6 +209,12 @@
             <li>Python</li>
             <li>C++</li>
         </ul>
+        <div class="selection-buttons">
+            <button class="java" onclick="selectSoftware('Java')">Java</button>
+            <button class="html" onclick="selectSoftware('HTML')">HTML</button>
+            <button class="python" onclick="selectSoftware('Python')">Python</button>
+            <button class="cpp" onclick="selectSoftware('C++')">C++</button>
+        </div>
     </div>
 </body>
 </html>
